@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
 		// Local variables 
 		// dog: 'keltian'
 		name: req.query.name,
-		dog: req.query.dog
+		dog: req.query.dog,
+		title: 'I love food' 
 	});
 });
 

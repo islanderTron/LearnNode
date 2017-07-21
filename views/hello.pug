@@ -34,8 +34,27 @@ extends layout
 //- block header 
 //- 	h1 Hello World!
 
-block content
-	p Hello
+//- block content
+//- 	p Hello
 
-block footer 
-	p Evil footer! 
+//- block footer 
+//- 	p Evil footer! 
+
+block content 
+	//- https://momentjs.com/ | you may learn more stuff about date formaats
+	h2 Sale ends in #{h.moment().endOf('day').fromNow()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
