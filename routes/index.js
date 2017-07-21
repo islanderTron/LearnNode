@@ -16,9 +16,15 @@ router.get('/', (req, res) => {
 	// res.json(req.query);
 
 	//  Request to send the data for the query name
-	res.send(req.query.name); 
+	// res.send(req.query.name); 
 	//  Type the url like this: http://localhost:7777/?name=Paul and would print "Paul" on webpage 
 
+	res.render('hello', {
+		// Local variables 
+		// dog: 'keltian'
+		name: req.query.name,
+		dog: req.query.dog
+	});
 });
 
 /*	You can write like this: http://localhost:7777/reverse/paul
