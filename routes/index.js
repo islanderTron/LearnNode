@@ -51,7 +51,7 @@ const express = require('express');
 const router = express.Router();
 const storeController = require('../controllers/storeController.js');
 
-router.get('/', storeController.homepage);
+router.get('/', storeController.myMiddleware, storeController.homepage);
 
 module.exports = router;
 // console.log(router);
