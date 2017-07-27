@@ -55,6 +55,9 @@ const storeController = require('../controllers/storeController.js');
 
 router.get('/', storeController.homepage);
 
+// router.get('/add', storeController.addStore); CONTINUE 
+
+
 module.exports = router;
 // console.log(router);
 
