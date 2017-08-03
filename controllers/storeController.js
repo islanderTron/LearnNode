@@ -1,16 +1,14 @@
-// middleware - handle the error!
-exports.myMiddleware = (req, res, next) => {
-	req.name = 'Paul';
-	// res.cookie('name', 'Paul is cool', {maxAge: 90000}); 
-
-	if(req.name === 'Paul'){
-		throw Error('That is a stupid name!');
-	}
-
-	next();
-}
-
 exports.homepage = (req, res) => {
 	console.log(req.name);
 	res.render('index');
+};
+
+exports.addStore = (req, res) => {
+	// res.send('it works');
+	res.render('editStore', {title:'Add Store'});  
+};
+
+exports.createStore = (req, res) => {
+	console.log(req.body);
+	res.json(req.body);
 };

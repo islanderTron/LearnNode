@@ -54,9 +54,10 @@ const storeController = require('../controllers/storeController.js');
 // router.get('/', storeController.myMiddleware, storeController.homepage);
 
 router.get('/', storeController.homepage);
+router.get('/add', storeController.addStore);
 
-// router.get('/add', storeController.addStore); CONTINUE 
-
+// post for form! 
+router.post('/add', storeController.createStore);
 
 module.exports = router;
 // console.log(router);
