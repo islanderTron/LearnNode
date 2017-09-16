@@ -64,7 +64,7 @@ exports.getStores = async(req, res) => {
 	// 1. Query the database for a list of all stores
 	const stores = await Store.find();
 	// console.log(stores);
-	res.render('stores', {title: 'Stores', stores});
+	res.render('stores', {title: 'Stores', stores});'['
 };
  
 exports.editStore = async (req, res) => {
@@ -97,10 +97,15 @@ exports.getStoreBySlug = async(req, res) =>{
     // res.json(store);
     res.render('store', {store, title: store.name});
 };
-exports.getStoresByTag = async(req,res) => {
-    // Testing
-    // res.send('it works');
-    const tags = await Store.getTagsList();
+exports.getStoresByTag = async (req, res) => {
     const tag = req.params.tag;
-    res.render('tag',{tags, title: 'Tags', tag});
+    const tagQuery = tag || { $exists: true };
+
+    const tagsPromise = Store.getTagsList();
+    const storesPromise = Store.find({ tags: tagQuery });
+    const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
+
+
+    res.render('tag', { tags, title: 'Tags', tag, stores });
 };
+
