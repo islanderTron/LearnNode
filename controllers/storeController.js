@@ -31,7 +31,7 @@ exports.addStore = (req, res) => {
   res.render('editStore', { title: 'Add Store' });
 };
 
-exports.upload = multer(multerOptions).single('photo');;
+exports.upload = multer(multerOptions).single('photo');
 
 exports.resize = async(req, res, next) =>{
   //  check if there is no new file to resize
@@ -57,7 +57,7 @@ exports.createStore = async (req, res) => {
   // Important for ES6
   // ```` need to add backtick in sublime text 3! 
   req.flash('success', `Successfully Created ${store.name}. Care to leave a review?`);
-  res.redirect(`/stores/${store.slug}`);
+  res.redirect(`/store/${store.slug}`);
 };
 
 exports.getStores = async(req, res) => {
@@ -75,7 +75,7 @@ exports.editStore = async (req, res) => {
   // 2. confirm they are owner of the store
   // 3. Redner out the edit form so the user can update their store
   res.render('editStore',{title: `Edit ${store.name }`, store});
-}
+};
 
 exports.updateStore = async (req, res) => {
   // set the location data to be a point
@@ -88,7 +88,7 @@ exports.updateStore = async (req, res) => {
   req.flash('success', `Successfully update <strong> ${store.name} </strong>. <a href="/stores/${store.slug}">View Store</a>`);
   res.redirect(`/stores/${store._id}/edit`); 
   // redirect them the store and tell them it worked
-}
+};
 
 exports.getStoreBySlug = async(req, res) =>{
   // res.send('it workds!');
