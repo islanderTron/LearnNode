@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.inner
+		h2 Edit Your Account
+		pre= h.dump(user)
+		form(action="/account" method="POST")
+			label(for="name") Name
+			//- Check the aap.js and look at line 55 - 61 to pass vars to our templates + all requests! 
+			input(type="text" name="name" value=user.name)
+			label(for="email") Email
+			input(type="text" name="email" value=user.email)
+			input.button(type="submit" value="Update My Account")
