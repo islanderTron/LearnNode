@@ -13,22 +13,22 @@ const transport = nodemailer.createTransport({
     }
 });
 
-transport.sendMail({
-    from: 'pju93@hotmail.com',
-    to: 'randy@example.com',
-    subject: 'Just trying things out!',
-    html: 'Hey I <strong>love</strong> you.',
-    text: 'Hey I **love** you'
-});
+// transport.sendMail({
+//     from: 'pju93@hotmail.com',
+//     to: 'randy@example.com',
+//     subject: 'Just trying things out!',
+//     html: 'Hey I <strong>love</strong> you.',
+//     text: 'Hey I **love** you'
+// });
 
-// exports.send = async (options) => {
-//     const mailOptions = {
-//         from: `Paul Uncangco <noreply@islandertron.com>`,
-//         subject: options.subject,
-//         to: options.user.email,
-//         html: 'This will be filled in later',
-//         text: 'THis will also be filled in later'
-//     };
-//     const sendMail = promisify(transport.sendMail, transport);
-//     return sendMail(mailOptions);
-// }
+exports.send = async (options) => {
+    const mailOptions = {
+        from: `Paul Uncangco <noreply@islandertron.com>`,
+        subject: options.subject,
+        to: options.user.email,
+        html: 'This will be filled in later',
+        text: 'THis will also be filled in later'
+    };
+    const sendMail = promisify(transport.sendMail, transport);
+    return sendMail(mailOptions);
+}
