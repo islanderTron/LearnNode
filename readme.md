@@ -1,27 +1,19 @@
-## What is this?
+### Running the app
 
-Just you wait folks!
+1. Ensure you have `npm` installed.
 
-## Sample Data
+Follow the instructions for your platform [here](https://github.com/npm/npm).
 
-To load sample data, run the following command in your terminal:
+2. Install all dependencies:
 
-```bash
-npm run sample
-```
+````
+npm install
+````
 
-If you have previously loaded in this data, you can wipe your database 100% clean with:
+3. Boot the HTTP server
 
-```bash
-npm run blowitallaway
-```
+````
+npm run server
+````
 
-That will populate 16 stores with 3 authors and 41 reviews. The logins for the authors are as follows:
-
-|Name|Email (login)|Password|
-|---|---|---|
-|Wes Bos|wes@example.com|wes|
-|Debbie Downer|debbie@example.com|debbie|
-|Beau|beau@example.com|beau|
-
-
+The server is now running at [localhost:7777](localhost:7777)
